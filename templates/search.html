@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>shuparada  search Program</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'hp/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<style>
+.abc {
+height:100%;
+background-position:center;
+background-repeat:no-repeat;
+background-size:cover;
+</style>
+</head>
+<body id="top">
+
+<div class="wrapper row3">
+  <main class="hoc container clear">
+    <!-- main body -->
+    <section id="introblocks">
+<ul id="latest" class="nospace group">
+
+{% for i in pr %}
+      <li class="one_third">
+          <figure><a class="imgover" href="{{i.get_url}}"><img src="{{i.img.url}}" alt="" style="height:200"></a>
+            <figcaption>
+              <h6 class="heading">{{i.name}}</h6>
+              <p>{{i.desc|truncatewords:8}}</p>
+                <br><b><p>Price Rs {{i.price}}</b></p>
+                <p>Stock Left  {{i.stock}}</p>
+
+            </figcaption>
+          </figure>
+        </li>
+
+{% endfor %}
+
+
+
+    <hr class="btmspace-80">
+    <div class="clear"></div>
+  </main>
+  </div>
+</div>
+<script src="{% static 'hp/layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'hp/layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'hp/layout/scripts/jquery.mobilemenu.js' %}"></script>
+</body>
+</html>
+{% endblock %}
+
+
+
+

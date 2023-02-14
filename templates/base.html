@@ -1,0 +1,51 @@
+{% load static %}
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<!--<title>shuparada Program</title>-->
+<!--<meta charset="utf-8">-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'hp/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+<style>
+.abc {
+height:100%;
+background-position:center;
+background-repeat:no-repeat;
+background-size:cover;
+
+</style>
+</head>
+<body id="top">
+
+<!-- Top Background Image Wrapper -->
+<!--<div class="abc" style="background-image:url({% static 'hp/images/demo/backgrounds/aaa.jpg' %});">-->
+  <!-- ################################################################################################ -->
+
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+        <!-- ################################################################################################ -->
+        <h1 style="color:red"><a href='/'>shuparada Program </a></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right">
+        <!-- ################################################################################################ -->
+        <ul class="clear" style="color:blue">
+          <li class="active"><a href='/'>Home</a></li>
+          <li><a class="active" href="{% url 'cartDetails' %}">Logout</a></li>
+          <li><a class="active" href="http://127.0.0.1:8000/admin">Login</a></li>
+          <li><a class="active" href="#">Sign up</a></li>
+          <li><a class="active" href="{% url 'cartDetails' %}">Cart&nbsp;&nbsp;<span class="price" style="color:white"><i class="fa fa-shopping-cart">&nbsp;&nbsp;</i>{{itc}}</span></a></li>
+
+<!--          <h4>Cart <span class="price" style="color:white"><i class="fa fa-shopping-cart"></i> <b>{{itc}}</b></span></h4>-->
+
+        </ul>
+      </nav>
+    </header>
+  </div>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
